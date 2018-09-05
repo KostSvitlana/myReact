@@ -1,18 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Router } from "react-router-dom";
+import { createBrowserHistory } from "history";
 import './index.css';
 import App from './App';
-import ShoppingList from './ShoppingList';
 import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render(
-  <div>
-    <App name='Svitlana'/>
-    <React.Fragment>
-      <ShoppingList name='Bowl'/>
-      <ShoppingList name='Glass'/>
-      <ShoppingList />
-    </React.Fragment>
-  </div>,
+  <Router history={createBrowserHistory}> 
+    <App /> 
+  </Router>,
   document.getElementById('root'));
+
 registerServiceWorker();
